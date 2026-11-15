@@ -1,0 +1,33 @@
+{
+  "name": "consent-privacy-scanner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pre-consent privacy compliance scanner built on Playwright: records requests, cookies and storage across pre-consent, post-reject and post-consent phases",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "privacy-scan": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "scan": "tsx src/cli.ts",
+    "demo": "tsx fixtures/demo.ts",
+    "test": "node --import tsx --test tests/unit.test.ts tests/integration.test.ts",
+    "test:unit": "node --import tsx --test tests/unit.test.ts",
+    "test:integration": "node --import tsx --test tests/integration.test.ts"
+  },
+  "dependencies": {
+    "node-forge": "^1.3.1",
+    "playwright": "1.65.1",
+    "tldts": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "@types/node-forge": "^1.3.11",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.0"
+  }
+}

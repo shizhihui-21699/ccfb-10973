@@ -1,0 +1,43 @@
+{
+  "url": "https://www.example.com/",
+  "consent": {
+    "accept": {
+      "selectors": ["#onetrust-accept-btn-handler"],
+      "text": ["accept all"]
+    },
+    "reject": {
+      "selectors": ["#onetrust-reject-all-handler"],
+      "text": ["reject all", "only necessary"]
+    },
+    "appearTimeoutMs": 8000
+  },
+  "settle": {
+    "preConsentMs": 6000,
+    "afterChoiceMs": 6000,
+    "quietMs": 1500,
+    "maxPhaseMs": 30000
+  },
+  "interaction": {
+    "scroll": true,
+    "pointer": true,
+    "type": false
+  },
+  "domains": [
+    {
+      "match": "collect.example.com",
+      "purpose": "analytics",
+      "vendor": "Example Analytics",
+      "tracking": true
+    },
+    {
+      "match": "*.cdn.example.com",
+      "purpose": "cdn",
+      "firstParty": true,
+      "tracking": false
+    }
+  ],
+  "trackingCookies": ["my_tracker_id"],
+  "exemptDomains": ["consent.example.com"],
+  "respectGpc": false,
+  "keepResponseBodies": false
+}
